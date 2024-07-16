@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'produtos/css/ver_produto.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Olá {{nome}}, tudo bem?</h1>
+
+    <img src="{% static 'produtos/img/amp.png' %}" width="300px">
+<br><br>
+    <form action="{% url 'ver_produto' %}" method="POST">{% csrf_token %}
+        <input type="text" name="nome" placeholder="Digite seu nome: "><br><br>
+        <input type="number" name="idade" placeholder="Digite sua idade: "><br><br>
+        <input type="submit" value="Enviar">
+        
+    </form>
+</body>
+</html>
